@@ -1,0 +1,85 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ML Prediction Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Ensure full height of the viewport */
+            margin: 0; /* Remove default margin */
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px; /* Add margin to the bottom */
+        }
+
+        form {
+            max-width: 400px;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        select, input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>ML Prediction Form</h1>
+    <form action="{{ url_for('result') }}" method="post">
+
+        <label for="Transmission">Transmission: </label>
+        <select id="Transmission" name="Transmission" required>
+            <option value="manual">Manual</option>
+            <option value="automatic">Automatic</option>
+        </select>
+        <br>
+        <label for="Fuel">Fuel: </label>
+        <select id="Fuel" name="Fuel" required>
+            <option value="petrol">Petrol</option>
+            <option value="Diesel">Diesel</option>
+        </select>
+        <br>
+        <label for="driven">Driven: </label>
+        <input type="number" name="driven" id="driven" placeholder="in Kms" required>
+        <br>
+        <label for="year">Year: </label>
+        <input type="number" name="year" id="year" placeholder="1983-2017" required>
+        <br>
+        <label for="engine">Engine: </label>
+        <input type="number" name="Engine" id="engine" placeholder="in cubic-capacity" required>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
