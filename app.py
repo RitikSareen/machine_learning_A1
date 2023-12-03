@@ -73,7 +73,7 @@ def predict():
 
     # Make prediction using the loaded model
     prediction = model.predict(input_data)
-
+    print("this is the prediction" ,prediction)
     # Render the prediction result on the index.html template
     return render_template('index.html', prediction=prediction[0])
 
