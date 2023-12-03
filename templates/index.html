@@ -56,7 +56,7 @@
 </head>
 <body>
     <h1>ML Prediction Form</h1>
-    <form action="{{ url_for('result') }}" method="post">
+    <form action="{{ url_for('predict') }}" method="post">
 
         <label for="Transmission">Transmission: </label>
         <select id="Transmission" name="Transmission" required>
@@ -81,5 +81,10 @@
 
         <input type="submit" value="Submit">
     </form>
+
+    {% if data is not none %}
+        <h2>Prediction Result:</h2>
+        <p>{{ data }}</p>
+    {% endif %}
 </body>
 </html>
